@@ -1,0 +1,26 @@
+{
+  "playlist": [
+    {
+      "title": "Bài hái 1",
+      "artist": "Nghệ sĩ Hào",
+      "id": 1
+    },
+    {
+      "title": "Bài hát 2",
+      "artist": "Nghệ sĩ Kiệt",
+      "id": 2
+    },
+    {
+      "title": "Bài hát đầu tay",
+      "artist": "Nghệ sĩ Trường Phong",
+      "id": "3",
+      "duration": "https://drive.google.com/uc?id=1pOiJwgIw9UJvsRogFzdU1yY-z2isHnDN"
+    },
+    {
+      "id": "4",
+      "title": "Bài hái 4",
+      "artist": "Nghệ sĩ Chấn Còi",
+      "duration": "https://drive.google.com/uc?id=1bPU-WrXiFGXd1I2_vcmgPGLERBYYQOib"
+    }
+  ]
+}

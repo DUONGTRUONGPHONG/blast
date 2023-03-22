@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+h1,h2,h3,h4{
+  font-weight: 400;
+}
+h4{
+  font-size: 16px;
+  font-weight: 600
+}
+h3{
+  font-size: 26px;
+}
+h2{
+  font-size: 30px;
+}
+h1{
+  font-size: 44px;
+}
+input::placeholder {
+  font-weight: 400;
+}
+a.router-link-exact-active {
+  color: #f65656;
+}
+a:hover{
+  color: #f65656;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+input[type="range"] {
+    -webkit-appearance: none;
+    border-radius: 12px;
+    height: 4px;
+    background-color: dimgrey;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: rgb(161, 194, 223);
+    width: 15px;
+    height: 15px;
+    border-radius: 100rem;
+
+}
+.ant-input,.ant-input-password{
+  max-width: 300px;
+  border-radius: 100rem;
+}
+.ant-slider{
+  width: 200px;
+}
+#volume .ant-slider-handle {
+  opacity: 0;
+}
+#volume{
+  width: 0;
+  transition: 0.5s;
+}
+.phong:hover #volume{
+  width: 100px;
+  transition: 0.5s;
+}
+.phong:hover #volume .ant-slider-handle{
+  opacity: 1;
+}
+.ant-upload.ant-upload-select-picture-card{
+  position: relative;
+}
+
