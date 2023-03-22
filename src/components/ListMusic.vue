@@ -58,24 +58,39 @@
                 </button>
             </div>
             <div class="overflow-y-scroll w-full md:max-w-[70%] pr-3">
-                <div v-for="song in list" :key="song.id" @click="plays(song)"
+                <div  @click="plays(song)"
                     class="flex justify-between items-center border-t cursor-pointer first:border-t-0">
                     <div class="flex items-center">
-                        <audio ref="audio" :src="song.duration"></audio>
+                        <audio ref="audio" src="https://drive.google.com/uc?id=1pOiJwgIw9UJvsRogFzdU1yY-z2isHnDN"></audio>
                         <div
                             class="flex justify-center items-center m-auto my-4 w-[48px] h-[48px] rounded-lg bg-gray-200 mr-2">
                             <i class="fa-solid fa-music text-gray-600"></i>
                         </div>
                         <div class="text-left">
-                            <h4>{{ song.id }}.{{ song.title }}</h4>
-                            <span class="opacity-70 text-sm">{{ song.artist }}</span>
+                            <h4>1.Lac</h4>
+                            <span class="opacity-70 text-sm">Rymastic</span>
                         </div>
                     </div>
                     <span>2:30</span>
                 </div>
-                <a-spin v-if="!loading">
+                <div  @click="plays(song)"
+                    class="flex justify-between items-center border-t cursor-pointer first:border-t-0">
+                    <div class="flex items-center">
+                        <audio ref="audio" src="https://drive.google.com/uc?id=1bPU-WrXiFGXd1I2_vcmgPGLERBYYQOib"></audio>
+                        <div
+                            class="flex justify-center items-center m-auto my-4 w-[48px] h-[48px] rounded-lg bg-gray-200 mr-2">
+                            <i class="fa-solid fa-music text-gray-600"></i>
+                        </div>
+                        <div class="text-left">
+                            <h4>2.Shape of you</h4>
+                            <span class="opacity-70 text-sm">Ed Sheeran</span>
+                        </div>
+                    </div>
+                    <span>2:30</span>
+                </div>
+                <!-- <a-spin v-if="!loading">
                     <a-icon slot="indicator" type="loading" style="font-size: 24px" spin />
-                </a-spin>
+                </a-spin> -->
             </div>
         </div>
         <div class="text-left my-10 md:max-w-[60%]">
