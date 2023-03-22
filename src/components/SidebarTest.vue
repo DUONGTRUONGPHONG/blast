@@ -53,7 +53,7 @@ export default {
         audio.addEventListener('durationchange', this.updateDuration);
         audio.volume = this.volume
         // console.log(mapState({nameMusic: state => state.nameMusic}))
-        console.log(this.$store.state.urlMusic)
+        // console.log(this.$store.state.urlMusic)
     },
     computed: {
         ...mapState({
@@ -70,17 +70,16 @@ export default {
             const minutes = Math.floor(this.currentTime / 60);
             return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
         },
-        // checkUrl() {
-        //     return this.$store.state.urlMusic || require('../assets/audio/Ed Sheeran - Shape of You (Official Music Video).mp3');
-        // },
-    }
+        
+    },
 
-    // watch:{
-    //     volume:function(newvalue){
-    //         this.$refs.test.volume = newvalue
-    //         // console.log(newvalue)
-    //     }
-    // }
+    watch:{
+        urlMusic:function(){
+            const audio = this.$refs.test;
+            audio.addEventListener('timeupdate', this.updateTime);
+            audio.addEventListener('durationchange', this.updateDuration);
+        }
+    }
 
 };
 </script>

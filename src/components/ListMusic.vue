@@ -58,7 +58,7 @@
                 </button>
             </div>
             <div class="overflow-y-scroll w-full md:max-w-[70%] pr-3">
-                <div  @click="plays(song)"
+                <div  @click="plays("Lac","https://drive.google.com/uc?id=1pOiJwgIw9UJvsRogFzdU1yY-z2isHnDN")"
                     class="flex justify-between items-center border-t cursor-pointer first:border-t-0">
                     <div class="flex items-center">
                         <audio ref="audio" src="https://drive.google.com/uc?id=1pOiJwgIw9UJvsRogFzdU1yY-z2isHnDN"></audio>
@@ -73,7 +73,7 @@
                     </div>
                     <span>2:30</span>
                 </div>
-                <div  @click="plays(song)"
+                <div  @click="plays("Shape of you","https://drive.google.com/uc?id=1bPU-WrXiFGXd1I2_vcmgPGLERBYYQOib")"
                     class="flex justify-between items-center border-t cursor-pointer first:border-t-0">
                     <div class="flex items-center">
                         <audio ref="audio" src="https://drive.google.com/uc?id=1bPU-WrXiFGXd1I2_vcmgPGLERBYYQOib"></audio>
@@ -182,15 +182,9 @@ export default {
                 console.log(error);
             }
         },
-        plays(song) {
-            // console.log(this.$refs.audio)
-            // this.$refs.audio.forEach((itemSong) => {
-            //     if (itemSong.currentSrc === song.duration) {
-            //         console.log(itemSong.currentSrc);
-            //         itemSong.play();
-            //     }
-            // });
-            this.$store.commit("SET_MUSIC",song)
+        plays(song,url) {
+            
+            this.$store.commit("SET_MUSIC",{song,url})
         },
         showModal() {
             this.visible = true;

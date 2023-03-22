@@ -14,8 +14,9 @@ export default new Vuex.Store({
     SET_LOGGEDIN(state, isLoggedIn) {
       state.isLoggedIn = isLoggedIn;
     },
-    SET_MUSIC(state,itemMusic){
-      state.nameMusic=itemMusic.title
+    SET_MUSIC(state,{itemMusic,url}){
+      state.nameMusic=itemMusic
+      state.url=url
     },
   },
   actions: {},
