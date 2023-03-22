@@ -1,24 +1,12 @@
-<!-- <template>
-    <div>
-      <ul>
-        <li v-for="song in playlist" :key="song.id">
-          {{ song.title }} - {{ song.artist }} ({{ song.duration }})
-        </li>
-      </ul>
-    </div>
-  </template> -->
+
+
 <template>
     <div class="mr-8 mt-8 mb:mx-auto mb:w-[90%]">
     <h2 class="text-left mb-3">Name Music</h2>
         <div>
             <div class="flex justify-end mb-3"><a-button @click="showModal"> Thêm </a-button></div>
         <a-modal v-model="visible" :footer="null" title="Thêm bài hát ">
-            <!-- <template slot="footer">
-                    <a-button key="back" @click="handleCancel"> Return </a-button>
-                    <a-button key="submit" type="primary"  :disabled="id === null || title === null" >
-                        Submit
-                    </a-button>
-                        </template> -->
+
                 <div>
                     <a-form-model layout="inline" :model="Form" @submit="postMusic" @submit.native.prevent>
                         <a-form-model-item>
@@ -58,7 +46,7 @@
                 </button>
             </div>
             <div class="overflow-y-scroll w-full md:max-w-[70%] pr-3">
-                <div  @click="plays("Lac","https://drive.google.com/uc?id=1pOiJwgIw9UJvsRogFzdU1yY-z2isHnDN")"
+                <div  @click="plays(name1,url1)"
                     class="flex justify-between items-center border-t cursor-pointer first:border-t-0">
                     <div class="flex items-center">
                         <audio ref="audio" src="https://drive.google.com/uc?id=1pOiJwgIw9UJvsRogFzdU1yY-z2isHnDN"></audio>
@@ -71,9 +59,9 @@
                             <span class="opacity-70 text-sm">Rymastic</span>
                         </div>
                     </div>
-                    <span>2:30</span>
+                    <span>3:58</span>
                 </div>
-                <div  @click="plays("Shape of you","https://drive.google.com/uc?id=1bPU-WrXiFGXd1I2_vcmgPGLERBYYQOib")"
+                <div  @click="plays(name2,url2)"
                     class="flex justify-between items-center border-t cursor-pointer first:border-t-0">
                     <div class="flex items-center">
                         <audio ref="audio" src="https://drive.google.com/uc?id=1bPU-WrXiFGXd1I2_vcmgPGLERBYYQOib"></audio>
@@ -86,11 +74,9 @@
                             <span class="opacity-70 text-sm">Ed Sheeran</span>
                         </div>
                     </div>
-                    <span>2:30</span>
+                    <span>4:23</span>
                 </div>
-                <!-- <a-spin v-if="!loading">
-                    <a-icon slot="indicator" type="loading" style="font-size: 24px" spin />
-                </a-spin> -->
+             
             </div>
         </div>
         <div class="text-left my-10 md:max-w-[60%]">
@@ -105,18 +91,6 @@
         </p>
     </div>
 
-    <!-- <a-spin v-if="!loading" class="mb-3">
-                            <a-icon slot="indicator" type="loading" style="font-size: 24px" spin />
-                                                </a-spin>
-                        
-                                                <ul v-else>
-                                                    <li v-for="song in list" :key="song.id" @click="plays(song.duration)">
-                                                        {{ song.title }} - {{ song.artist }} ({{ song.duration }})
-                                                        <audio ref="audio" :src="song.duration"></audio>
-                                                        <button @click="editItem(song)">Update</button>
-                                                    </li>
-                                                </ul> -->
-        <!-- <audio ref="audioPlayer" :src="currentSongUrl" @ended="playNextSong"></audio> -->
     </div>
 </template>
 
@@ -127,10 +101,13 @@ export default {
     data() {
         return {
             list: [],
-            // currentSongIndex: 0,
             loading: false,
             play: false,
             visible: false,
+            name1:"Lac",
+            url1:"https://drive.google.com/uc?id=1bPU-WrXiFGXd1I2_vcmgPGLERBYYQOib",
+            name2:"Shape of you",
+            url2:"https://drive.google.com/uc?id=1pOiJwgIw9UJvsRogFzdU1yY-z2isHnDN",
             Form: {
                 id: null,
                 title: null,
